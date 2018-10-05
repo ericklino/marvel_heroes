@@ -1,0 +1,13 @@
+<h1>Heroes</h1>
+
+
+<% @heroes["data"]["results"].each do |heroe|%>
+  <div class="">
+    <figure>
+      <%= image_tag "#{heroe["thumbnail"]["path"]}.#{heroe["thumbnail"]["extension"]}"%>
+    </figure>
+  </div>
+<% end %>
+
+
+<p> Amount of heroes Marvel <%= @heroes["data"]["total"] %></p>
