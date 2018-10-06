@@ -8,11 +8,18 @@ class HeroesController < ApplicationController
   end
 
   def show
-
   end
 
-
   private
+    def request_heroes(url)
+      request = Typhoeus::Request.new(url)
+      resp = request.run
+      if resp.code == 200
+        data = resp.body
+        result = JSON.parse(data)
+        result
+      end
+    end
 
     def md5(ts)
       @md5 = Digest::MD5.hexdigest(ts + ENV['PRIVATE_KEY'] + ENV['PUBLIC_KEY'])
