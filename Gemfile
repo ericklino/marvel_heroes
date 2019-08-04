@@ -36,6 +36,7 @@ gem 'typhoeus'
 
 group :production do
   gem  'unicorn'
+  gem 'pg'
 end
 
 group :development, :test do
