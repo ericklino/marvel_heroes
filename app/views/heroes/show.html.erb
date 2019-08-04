@@ -1,2 +1,59 @@
-<h1>Heroes#show</h1>
-<p>Find me in app/views/heroes/show.html.erb</p>
+<div class="container">
+  <section class="">
+    <div class="div__heroe--container">
+      <div class="div__image--heroe">
+        <figure class="figure__heroes">
+          <%= image_tag "#{@heroe["thumbnail"]["path"]}.#{@heroe["thumbnail"]["extension"]}", class: "img__heroes img--perfil"%>
+          <figcaption class="figcaption__heroes heroe--perfil"><%= @heroe["name"] %></figcaption>
+        </figure>
+      </div>
+      <div class="heroe__biography">
+        <h2 class="title__biography">Biography</h2>
+        <p><%= @heroe["description"] %></p>
+      </div>
+    </div>
+  </section>
+    <section class="">
+      <h1 class="title__section--featured"><%= @heroe["name"] %>: Series</h1>
+      <% if @series.present? %>
+        <div class="div__heroe--series">
+          <%@series["data"]["results"].each do |serie|%>
+            <div class="div__figure">
+              <figure class="figure__heroes">
+                <%= image_tag "#{serie["thumbnail"]["path"]}.#{serie["thumbnail"]["extension"]}", class: "img__figure img__serie"%>
+                <figcaption class="figcaption__heroe--featured">
+                  <div class="info__serie--heroe">
+                    <span class="span__info span__info--year"><%= serie["startYear"] %> <%= "#{'a ' << serie["endYear"].to_s if serie["endYear"].present?}"%> </span>
+                    <span class="span__info span__info--comics">Qtd. Quadrinhos: <%= serie["comics"]["available"] %></span>
+                  </div>
+                  <%= serie["title"] %>
+                </figcaption>
+              </figure>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <p>Não foram encontradas</p>
+      <% end %>
+    </section>
+
+  <section class="">
+      <h1 class="title__section--featured"><%= @heroe["name"] %>: Quadrinhos</h1>
+      <% if @comics.present? %>
+        <div class="div__heroe--comic">
+          <% @comics["data"]["results"].each do |comic|%>
+            <div class="div__comic--item">
+              <figure class="figure__heroes">
+                <%= image_tag "#{comic["thumbnail"]["path"]}.#{comic["thumbnail"]["extension"]}", class: "img__figure img__comic"%>
+                <figcaption class="figcaption__heroe--featured heroe__comic"><%= comic["title"] %></figcaption>
+              </figure>
+            </div>
+          <% end %>
+        </div>
+        <div class="div__load--more">
+          <%= link_to 'Load More', heroe_comics_path(@heroe["id"]), class: 'btn btn-load-more', :data => {id: @heroe["id"]}  %>
+        </div>
+      <% else %>
+        <p>Não foram encontradas</p>
+      <% end %>
+  </section>

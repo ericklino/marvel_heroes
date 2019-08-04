@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MarvelHeroes</title>
+    <title>Marvel Heroes</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,22 @@
   </head>
 
   <body>
+    <header class="header">
+      <div class="div__marvel">
+        Marvel Heroes
+      </div>
+      <nav class="nav">
+        <ul class="container__ul">
+          <%= link_to heroes_path do %>
+            <li class="ul__li"> Characters</li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
     <%= yield %>
+
+    <footer>
+      Roda pé
+    </footer>
   </body>
 </html>

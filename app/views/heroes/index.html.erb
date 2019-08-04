@@ -1,13 +1,25 @@
-<h1>Heroes</h1>
+<div class="container">
+  <section class="">
+    <div class="div__heroes">
+      <% @heroes["data"]["results"].each do |heroe|%>
+          <div class="div__heroes--item">
+            <%= link_to heroe_path(heroe["id"]) do %>
+            <figure class="figure__heroes">
+              <%= image_tag "#{heroe["thumbnail"]["path"]}.#{heroe["thumbnail"]["extension"]}", class: "img__heroes"%>
+              <figcaption class="figcaption__heroes hvr-sweep-to-bottom"><%= heroe["name"] %></figcaption>
+            </figure>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
+  </section>
+</div>
 
-
-<% @heroes["data"]["results"].each do |heroe|%>
-  <div class="">
-    <figure>
-      <%= image_tag "#{heroe["thumbnail"]["path"]}.#{heroe["thumbnail"]["extension"]}"%>
-    </figure>
-  </div>
-<% end %>
+<ol class="pagination">
+  <li>1 - 24 / <%= @heroes["data"]["total"] %></li>
+  <li><%= link_to ">>", heroes_path(:page => params[:page].present? ? params[:page].to_i + 1 : 2), class: 'li__pagination'%> </li>
+  <li><%= link_to "last", heroes_path(:page => '63')%></li>
+</ol>
 
 
 <p> Amount of heroes Marvel <%= @heroes["data"]["total"] %></p>
