@@ -34,7 +34,7 @@ gem 'typhoeus'
 # gem 'capistrano-rails', group: :development
 
 group :production do
-  gem 
+  gem  'unicorn'
 end
 
 group :development, :test do
