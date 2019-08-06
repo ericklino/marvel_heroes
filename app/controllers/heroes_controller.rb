@@ -6,7 +6,7 @@ class HeroesController < ApplicationController
     options[:limit] = 24
     options[:offset] = (params[:page].to_i - 1) * 24   if params[:page].to_i > 1
 
-  
+
     @heroes = @heroes_json.request_heroes("characters", options)
   end
 
@@ -33,7 +33,7 @@ class HeroesController < ApplicationController
   private
 
   def set_key
-    @heroes_json = Heroe.new('f443777c1618c2b0690b10194fdb08837da294fb', 'fb75595093ebad3a97568ba732678659')
+    @heroes_json = Heroe.new(ENV['PRIVATE_KEY'], ENV['PUBLIC_KEY'])
   end
 
 end
