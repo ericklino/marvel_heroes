@@ -34,8 +34,8 @@ $(document).ready(function(){
 
 
     }else {
-      $('.pagination').prepend('<li> <a class="li__pagination" href="/heroes?page=' + (parseInt(check_parameter[1] - 1)) +'"><<</a></li>');
-      $('.pagination').prepend('<li><a class="li__pagination" href="/heroes?page=1">first</a></li>');
+      $('.pagination').prepend('<li class="li__pagination"><a  href="/heroes?page=' + (parseInt(check_parameter[1] - 1)) +'"><<</a></li>');
+      $('.pagination').prepend('<li class="li__pagination"><a  href="/heroes?page=1">first</a></li>');
 
       if (parseInt(check_parameter[1]) == 63) {
         number_index_total = 62 * 24 + 4;

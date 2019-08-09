@@ -25,8 +25,94 @@
    }
  }
 
+ .header {
+   background: #e62429;
+   display: flex;
+   justify-content: space-around;
+   margin-bottom: 2em;
+   padding: 1rem;
+ }
+
+ .div__marvel {
+   width: 35%;
+   background: #e62429;
+   color: #fff;
+   font-size: 3rem;
+   font-family: "Marvel-Regular";
+   line-height: 2.3rem;
+   text-align: center;
+   text-transform: uppercase;
+ }
+
+ .nav {
+   width: 60%;
+ }
+
+ .container__ul {
+   color: #fff;
+   display: flex;
+   font-weight: bold;
+   font-size: 1.8rem;
+   font-family: "Roboto-Condensed";
+   list-style: none;
+   margin: 0;
+ }
+
+
+.footer__info {
+  background: #e62429;
+  color: #fff;
+  width: 100%;
+
+  .author__footer {
+    font-family: "Roboto-Condensed";
+    padding: 1rem 0;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+}
+
+.pagination {
+  padding-left: 0;
+
+  .li__pagination  {
+    
+    height: 2em;
+    line-height: 2em;
+    color: #fff;
+    font-size: .9em;
+    font-weight: 400;
+    font-family: "Roboto-Condensed";
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    padding: 0 .6em;
+    border-radius: 4px;
+    background: #e62429;
+    -webkit-transition: 0.15s ease;
+    -moz-transition: 0.15s ease;
+    transition: 0.15s ease;
+
+    a {
+      color: #fff;
+    }
+  }
+}
+
+
 .div__heroes--item{
-  width: 15%;
+  width: 100%;
+}
+
+.figure__heroes{
+  margin: 0;
+}
+
+.img__heroes {
+  height: 300px;
+  vertical-align: middle;
+  width: 100%;
 }
 
 .title__heroes {
@@ -77,16 +163,6 @@
   margin-bottom: 1rem;
   padding: 10px 0 0 10px;
   text-transform: uppercase;
-}
-
-.figure__heroes{
-  margin: 0;
-}
-
-.img__heroes {
-  height: 215px;
-  vertical-align: middle;
-  width: 100%;
 }
 
 .img--perfil {
@@ -200,44 +276,14 @@
    }
  }
 
- .header {
-   margin-bottom: 2em;
-   display: flex;
-   padding: 1rem;
-   background: #e62429;
- }
-
- .nav {
-   width: 80%;
- }
-
- .container__ul {
-   display: flex;
-   font-family: "Roboto-Condensed";
-   list-style: none;
-   padding-top: 23px;
-   color: #fff;
-   font-size: 1.8rem;
-   margin: 0;
-   font-weight: bold;
 
 
- }
+
  .ul__li {
    width: 15%;
  }
 
-.div__marvel {
-  width: 20%;
-  background: #e62429;
-  color: #fff;
-  font-size: 3.8rem;
-  font-family: "Marvel-Regular";
-  line-height: 4rem;
-  padding-top: 1rem;
-  text-align: center;
-  text-transform: uppercase;
-}
+
 
 .ul__li {
   color: #fff;
@@ -291,6 +337,39 @@
   list-style: none;
 
   li {
-    margin-left: .6rem;
+    margin-left: .2rem;
+  }
+}
+
+// sm big
+$screen-sm: 500px;
+@media (min-width: $screen-sm) {
+  .div__heroes--item{
+    width: 49%;
+  }
+
+  .li__pagination  {
+    min-width: 2em;
+  }
+}
+
+$screen-tablet: 768px;
+@media (min-width: $screen-tablet) {
+  .div__heroes--item{
+    width: 32%;
+  }
+}
+
+$screen-desktop: 992px;
+@media (min-width: $screen-desktop) {
+  .div__heroes--item{
+    width: 24%;
+  }
+}
+
+$screen-desktop-lg: 1200px;
+@media (min-width: $screen-desktop-lg) {
+  .div__heroes--item{
+    width: 16%;
   }
 }
