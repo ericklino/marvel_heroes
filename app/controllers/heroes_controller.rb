@@ -8,6 +8,7 @@ class HeroesController < ApplicationController
 
 
     @heroes = @heroes_json.request_heroes("characters", options)
+
   end
 
   def show

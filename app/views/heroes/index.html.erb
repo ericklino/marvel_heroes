@@ -1,6 +1,7 @@
 <div class="container">
   <section class="">
     <div class="div__heroes">
+
       <% @heroes["data"]["results"].each do |heroe|%>
           <div class="div__heroes--item">
             <%= link_to heroe_path(heroe["id"]) do %>
@@ -16,10 +17,7 @@
 </div>
 
 <ol class="pagination">
-  <li>1 - 24 / <%= @heroes["data"]["total"] %></li>
-  <li><%= link_to ">>", heroes_path(:page => params[:page].present? ? params[:page].to_i + 1 : 2), class: 'li__pagination'%> </li>
-  <li><%= link_to "last", heroes_path(:page => '63')%></li>
+  <li class="li__pagination">1 - 24 / <%= @heroes["data"]["total"] %></li>
+  <li class="li__pagination"><%= link_to ">>", heroes_path(:page => params[:page].present? ? params[:page].to_i + 1 : 2) %></li>
+  <li class="li__pagination"><%= link_to "last", heroes_path(:page => '63') %></li>
 </ol>
-
-
-<p> Amount of heroes Marvel <%= @heroes["data"]["total"] %></p>

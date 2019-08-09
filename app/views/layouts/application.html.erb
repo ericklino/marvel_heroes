@@ -4,8 +4,11 @@
     <title>Marvel Heroes</title>
     <%= csrf_meta_tags %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag :application, "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" %>
+
   </head>
 
   <body>
@@ -23,8 +26,10 @@
     </header>
     <%= yield %>
 
-    <footer>
-      Roda pé
+    <footer class="footer__info">
+      <div class="author__footer">
+          <p>Desenvolvido com muito <i class="ion-heart"></i> por Erick Lino Pedro</p>
+      </div>
     </footer>
   </body>
 </html>
