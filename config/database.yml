@@ -5,3 +5,11 @@ development:
   pool: 5
   username:
   password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database:
+  pool: 5
+  username:
+  password:
